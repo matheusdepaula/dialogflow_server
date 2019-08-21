@@ -27,6 +27,7 @@ router.use(bodyParser.urlencoded({ extended: true }))
 
 router.post('/message/text/send', async (req, res) => {
   let { text, email, sessionId } = req.body
+  console.log(`ENVIO DE MENSAGEM -- TEXT RECEIVED: ${text}`)
   let { projectId, sessionClient } = dialogflowClient
   let sessionPath = sessionClient.sessionPath(projectId, sessionId)
 
